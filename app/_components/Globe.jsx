@@ -27,8 +27,9 @@ const GlobeComponent = () => {
 
   // Focus on North America upon loading
   useEffect(() => {
-    if (globeEl.current) {
-      globeEl.current.pointOfView({ lat: 40, lng: -100, altitude: 2 }, 0); // Latitude and longitude roughly in the center of North America
+    const currentGlobe = globeEl.current;
+    if (currentGlobe && "pointOfView" in currentGlobe) {
+      currentGlobe.pointOfView({ lat: 40, lng: -100, altitude: 2 }, 0); // Latitude and longitude roughly in the center of North America
     }
   }, []);
 
