@@ -1,5 +1,7 @@
+"use client";
+
 import dynamic from "next/dynamic";
-// Import GlobeComponent dynamically and only on the client side
+
 const GlobeComponent = dynamic(() => import("./_components/Globe"), {
   ssr: false,
 });
